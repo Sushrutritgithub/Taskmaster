@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-DO List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 🔹 Authentication Section -->
+    <div id="auth">
+        <h2>Welcome to TaskMaster</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <div>
+            <button onclick="register()">Register</button>
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <!-- 🔹 To-Do List (Hidden Until Logged In) -->
+    <div id="todo-container" class="todo-containers" style="display: none;">
+        <div class="header-container">
+            <h1>My To-Do List</h1>
+            <button onclick="logout()" id="logoutBtn">Logout</button>
+        </div>
+
+        <!-- 🔹 Input Section -->
+        <div id="todocontainer" class="container">
+            <div class="input-section">
+                <input type="text" id="taskinput" placeholder="Enter a new task..." class="task-input">
+                <button id="addtaskbutton" class="btn">
+                    <span>Add Task</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 🔹 Task List -->
+        <div id="tasklist" class="task-list"></div>
+    </div>
+
+    <!-- 🔹 Script Files - Load in correct order -->
+    <script src="script.js"></script>
+    <script src="func.js"></script>
+</body>
+</html>

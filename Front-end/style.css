@@ -1,0 +1,283 @@
+/* ======== GENERAL STYLES ======== */
+:root {
+    --primary: #4e54c8;
+    --primary-dark: #363795;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, var(--primary-dark), var(--primary));
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ======== AUTHENTICATION SECTION ======== */
+#auth {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+#auth h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+#auth input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+#auth input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+}
+
+#auth button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 5px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+#auth button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+#auth button:active {
+    transform: translateY(0);
+}
+
+/* ======== TO-DO CONTAINER ======== */
+.todo-containers {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 800px;
+    padding: 25px;
+    transition: var(--transition);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.todo-containers h1 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 28px;
+}
+
+#logoutBtn {
+    background-color: var(--danger);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+#logoutBtn:hover {
+    background-color: #bd2130;
+}
+
+/* Input Section */
+.container {
+    margin-bottom: 25px;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.task-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+}
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Task List */
+.task-list {
+    margin-top: 20px;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 15px;
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.error {
+    color: var(--danger);
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    transition: var(--transition);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-item:hover {
+    background-color: #f0f0f0;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.task-text[contenteditable="true"] {
+    background-color: rgba(78, 84, 200, 0.1);
+    outline: 2px solid var(--primary);
+    padding: 5px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
+    margin-left: 8px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.edit-btn {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #5a6268;
+}
+
+.delete-btn {
+    background-color: var(--danger);
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #bd2130;
+}
+
+/* ======== RESPONSIVE STYLES ======== */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+    
+    #auth, .todo-containers {
+        padding: 20px;
+    }
+    
+    .input-section {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .task-item {
+        flex-wrap: wrap;
+    }
+    
+    .task-text {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .edit-btn, .delete-btn {
+        flex: 1;
+        margin: 0 5px;
+    }
+}
